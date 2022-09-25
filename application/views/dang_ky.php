@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php 
+if (!isset($_SESSION)) {
+    session_start();
+}
+
+?>
   <head>
     <meta charset="UTF-8" />
     <meta name="author" content="Sahil Kumar" />
@@ -16,9 +22,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
   <body translate="no" >
-
-    
-
   <div class="materialContainer">
     <form action="login_data" method="post">
        <div class="box">

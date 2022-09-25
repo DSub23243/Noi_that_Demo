@@ -17,10 +17,16 @@ class Firt_controller extends CI_Controller {
 		$this->load->view('menu-bar');
 		$this->load->view('noi_that');
 	}
+
 	public function user_quanli()
 	{
 		$this->load->view('menu-bar');
 		$this->load->view('user_account');
+		
+	}
+	public function Product_pages()
+	{
+		$this->load->view('product_page');
 	}
 	public function insert_data()
 	{
@@ -28,12 +34,13 @@ class Firt_controller extends CI_Controller {
 		$repass = $this->input->post(addslashes('repass'));
 		$rerepass = $this->input->post(addslashes('rerepass'));
 		$name = $this->input->post(addslashes('name'));
+		$date = @date('Y-m-d');
 		if ($repass == $rerepass) {
 			$this->load->model('Insert_data_sql');
-			if ($this->Insert_data_sql->insert($reacc , $repass , $name) == 1) {
+			if ($this->Insert_data_sql->insert($reacc , $repass , $name, $date) == 1) {
 				$this->noithat();
 			}
-			else if ($this->Insert_data_sql->insert($reacc , $repass , $name) == 0) {
+			else if ($this->Insert_data_sql->insert($reacc , $repass , $name, $date) == 0) {
 				$data['alert'] = "Tài khoản đã tồn tại";
 				$this->load->view('alert-box', $data);
 				$this->load->view('dang_ky');
@@ -44,7 +51,7 @@ class Firt_controller extends CI_Controller {
 				$this->load->view('alert-box', $data);
 				$this->load->view('dang_ky');
 		}
-	}
+	}	
 	public function login_data()
 	{
 		$acc = $this->input->post(addslashes('acc'));
@@ -59,9 +66,16 @@ class Firt_controller extends CI_Controller {
 				$this->load->view('dang_ky');
 		}
 
-		
 	}
+	public function Log_out()
+	{
 
+		$this->load->view('dang_ky');
+		session_destroy();
+	}
+	
+	/* End of file Firt_controller.php */
+	/* Location: ./application/controllers/Firt_controller.php */
 
 
 }

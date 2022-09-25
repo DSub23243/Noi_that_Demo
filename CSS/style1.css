@@ -51,7 +51,7 @@ section {
 }
 #login {
   position: absolute;
-  left: 90%;
+  left: 80%;
 }
 .text-pro {
   font-family: roboto;
@@ -286,7 +286,7 @@ section {
   }
   .menu-con #login {
     position: absolute;
-    left: 75%;
+    left: 70%;
   }
   .menu-con a {
     color: white;

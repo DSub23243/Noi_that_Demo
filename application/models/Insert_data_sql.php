@@ -28,9 +28,9 @@ class Insert_data_sql extends CI_Model {
 		}
 		
 	}
-	public function insert($acc , $pass, $name)
+	public function insert($acc , $pass, $name, $date)
 	{
-		$dulieu = array('Name_user' => $acc, 'Password_user' => $pass, 'Account_name' => $name);
+		$dulieu = array('Name_user' => $acc, 'Password_user' => $pass, 'Account_name' => $name, 'Date_create'=> $date);
 		if ($this->kt_acc($acc) != $acc) {
 			$this->db->insert('user_account', $dulieu);
 			return 1;
