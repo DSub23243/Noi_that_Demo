@@ -4,6 +4,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="<?php echo base_url();?>/CSS/side-bar-product.css">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a80a9def81.js" crossorigin="anonymous"></script>
 	<title>Document</title>
 </head>
 <body translate="no" >
@@ -11,13 +13,7 @@
     <ul class="main-buttons">
       <li>
         <i class="fa fa-circle fa-2x"></i>
-        Lorem Ipsum 
-        <ul class="hidden">
-          <li>TK-421</li>
-          <li>why aren't </li>
-          <li>you at </li>
-          <li>your post?</li>
-        </ul>
+        <a href="noithat" style="color: white; text-decoration: none;t">Home</a> 
       </li>
       <li>
         <i class="fa fa-circle fa-2x"></i>
@@ -38,6 +34,23 @@
           <li>Ipsum</li>
           <li>Dolor</li>
         </ul>
+      </li>
+      <li id='login'>
+        <a style='color:white; text-decoration: none;'
+        <?php
+            if(!isset($_SESSION)) { 
+              session_start(); 
+            } 
+            if (!isset($_SESSION['name'])) {
+            ?> href='dang_ky' 
+            <?php } else { ?> 
+              href='user_quanli' <?php } ?>
+              ><i class='fa-solid fa-user'><?php 
+              if (isset($_SESSION['name'])) {
+                echo ' ' . $_SESSION['name'];
+              }
+            ?></i></a>
+
       </li>
     </ul>
 	</nav>

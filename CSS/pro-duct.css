@@ -64,7 +64,7 @@ main-pro[role=main-pro] {
 
 .list-pro {
   position: absolute;
-  top: 10%;
+  top: 5%;
   display: flex;
   flex-wrap: wrap;
   margin-left: 10px;
@@ -74,12 +74,27 @@ main-pro[role=main-pro] {
   background: #fff;
   max-width: 200px;
   position: relative;
-  z-index: 15;
+  z-index: 1;
   margin: 0 auto;
   -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
   -o-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+@media (min-width: 1366px) {
+  .list-pro {
+    min-width: 1400px;
+  }
+}
+@media (max-width: 1024px) {
+  main-pro[role=main-pro] {
+  margin-left: 9%;
+}
+}
+@media (max-width: 992px) {
+  main-pro[role=main-pro] {
+  margin-left: 10%;
+}
 }
 .product-item .product-description {
   position: relative;
@@ -104,7 +119,7 @@ main-pro[role=main-pro] {
 .product-item .product-description .price {
   width: 25%;
   float: left;
-  color: #9bb6aa;
+  color: black;
   font-size: 2em;
   position: relative;
   margin-top: 25px;
@@ -118,7 +133,7 @@ main-pro[role=main-pro] {
 }
 .product-item .product-sidebar {
   height: 100%;
-  background: #31353d;
+  background: #1d1d1d;
   width: 50px;
   position: absolute;
   top: 0;
@@ -215,10 +230,10 @@ main-pro[role=main-pro] {
 .product-item .product-sidebar button:hover {
   cursor: pointer;
   width: 50px;
-  background-color: #9bb6aa;
+  background-color: #858585;
   position: relative;
   background-position: 15px center;
-  border-color: #9bb6aa;
+  border-color: #969696;
 }
 .product-item .product-sidebar button:hover span {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=($opacity * 100))";

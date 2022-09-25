@@ -58,8 +58,11 @@
 .hidden li:hover, .hidden li:active, .hidden li:focus {
   background-color: #323541;
 }
-
+#login {
+  position: absolute;
+  top: 90%;
+}
 body {
-  background-color: #caccd6;
+  background-color: #f3f3f3;
   line-height: 30px;
 }
